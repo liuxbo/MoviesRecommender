@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:17:46:23 +0800] "GET / HTTP/1.1" 200 96 http-bio-8088-exec-2 666
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:17:46:23 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8088-exec-3 18
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:20:50:22 +0800] "GET / HTTP/1.1" 200 96 http-bio-8088-exec-2 81
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:20:50:23 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8088-exec-3 19
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:20:50:40 +0800] "GET / HTTP/1.1" 200 96 http-bio-8088-exec-4 2
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:20:53:17 +0800] "GET /rest/users/register HTTP/1.1" 200 100 http-bio-8088-exec-7 65
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:20:59:27 +0800] "GET /rest/users/login HTTP/1.1" 200 73 http-bio-8088-exec-10 14
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:21:00:58 +0800] "GET /rest/users/register HTTP/1.1" 200 100 http-bio-8088-exec-3 2
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:21:01:10 +0800] "GET /rest/users/login HTTP/1.1" 200 73 http-bio-8088-exec-3 2
+0:0:0:0:0:0:0:1 - - [21/Apr/2021:21:01:20 +0800] "GET /rest/users/register HTTP/1.1" 200 100 http-bio-8088-exec-5 3

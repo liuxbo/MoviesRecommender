@@ -1,0 +1,3 @@
+com\atguigu\server\rest\UserRestApi.class
+com\atguigu\server\model\core\User.class
+com\atguigu\server\rest\MovieRestApi.class

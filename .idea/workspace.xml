@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d1c2dbb-44d4-4bfd-8d91-cfd7aa3d455e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/website/website/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/website/website/angular.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="spring-beans.schema" />
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/website/website" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/maven/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1q6UKmQgo77WQi1wqfWbONzXNYH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/businessServer/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IDEAproject1\MovieRecommendSystem\businessServer\src\main\resources" />
+      <recent name="C:\IDEAproject1\MovieRecommendSystem\recommender\kafkaStream\src\main\resources" />
+      <recent name="C:\IDEAproject1\MovieRecommendSystem\recommender\StreamingRecommender\src\main\resources" />
+      <recent name="C:\IDEAproject1\MovieRecommendSystem\recommender\OfflineRecommender\src\main\resources" />
+      <recent name="C:\IDEAproject1\MovieRecommendSystem\recommender\statisticsRecommender\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.businessServer [tomcat7:run]">
+    <configuration name="ALSTriner" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.offline.ALSTriner" />
+      <module name="OfflineRecommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.offline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.kafkastream.Application" />
+      <module name="kafkaStream" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.kafkastream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfflineRecommender" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.offline.OfflineRecommender" />
+      <module name="OfflineRecommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.offline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamingRecommender" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.streaming.StreamingRecommender" />
+      <module name="StreamingRecommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.streaming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="businessServer [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/businessServer" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Maven.businessServer [tomcat7:run]" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.StreamingRecommender" />
+        <item itemvalue="Application.ALSTriner" />
+        <item itemvalue="Application.OfflineRecommender" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d1c2dbb-44d4-4bfd-8d91-cfd7aa3d455e" name="Default Changelist" comment="" />
+      <created>1616399471951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616399471951</updated>
+      <workItem from="1616399475246" duration="7673000" />
+      <workItem from="1616465606135" duration="819000" />
+      <workItem from="1616466510931" duration="2291000" />
+      <workItem from="1616475290328" duration="2437000" />
+      <workItem from="1616479575885" duration="969000" />
+      <workItem from="1616492330141" duration="1815000" />
+      <workItem from="1616551913721" duration="163000" />
+      <workItem from="1616553553410" duration="2205000" />
+      <workItem from="1616556495996" duration="634000" />
+      <workItem from="1616659466613" duration="3479000" />
+      <workItem from="1616724075426" duration="3899000" />
+      <workItem from="1616736575893" duration="1043000" />
+      <workItem from="1616742218530" duration="749000" />
+      <workItem from="1616835047582" duration="3678000" />
+      <workItem from="1616892572855" duration="2199000" />
+      <workItem from="1616894881657" duration="5000" />
+      <workItem from="1617062419830" duration="6000" />
+      <workItem from="1617846687890" duration="1623000" />
+      <workItem from="1617848450543" duration="3450000" />
+      <workItem from="1617861185364" duration="4813000" />
+      <workItem from="1617930999067" duration="329000" />
+      <workItem from="1617931826002" duration="5050000" />
+      <workItem from="1617968598128" duration="760000" />
+      <workItem from="1617969433267" duration="21000" />
+      <workItem from="1617969737337" duration="3004000" />
+      <workItem from="1618015899755" duration="7874000" />
+      <workItem from="1618034401432" duration="1259000" />
+      <workItem from="1618047871671" duration="1337000" />
+      <workItem from="1618192902561" duration="616000" />
+      <workItem from="1618208660793" duration="649000" />
+      <workItem from="1618209329546" duration="4440000" />
+      <workItem from="1618281709542" duration="726000" />
+      <workItem from="1618283304292" duration="4334000" />
+      <workItem from="1618475627299" duration="4915000" />
+      <workItem from="1618628177761" duration="733000" />
+      <workItem from="1618636397871" duration="7034000" />
+      <workItem from="1618714490546" duration="927000" />
+      <workItem from="1618730648853" duration="4661000" />
+      <workItem from="1618796211879" duration="3513000" />
+      <workItem from="1618808731095" duration="3957000" />
+      <workItem from="1618900908702" duration="5640000" />
+      <workItem from="1618912359779" duration="752000" />
+      <workItem from="1618920942446" duration="470000" />
+      <workItem from="1618925150881" duration="1762000" />
+      <workItem from="1618927780313" duration="249000" />
+      <workItem from="1618970935708" duration="2160000" />
+      <workItem from="1618973605042" duration="218000" />
+      <workItem from="1618974106246" duration="1328000" />
+      <workItem from="1618982071981" duration="1082000" />
+      <workItem from="1618986012521" duration="8350000" />
+      <workItem from="1619004975410" duration="5583000" />
+      <workItem from="1619011733184" duration="1208000" />
+      <workItem from="1619067106200" duration="3331000" />
+      <workItem from="1619073429208" duration="2506000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1618983151500">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1618983151500" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1618023821476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1618023821476" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1619007773047">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1619007773047" />
+    <state x="463" y="271" width="609" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1617850449162">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="271" width="609" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1617850449162" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1618975352835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618975352835" />
+    <state width="1493" height="297" key="GridCell.Tab.0.bottom" timestamp="1619011016439">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="297" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619011016439" />
+    <state width="1493" height="297" key="GridCell.Tab.0.center" timestamp="1619011016439">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="297" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619011016439" />
+    <state width="1493" height="297" key="GridCell.Tab.0.left" timestamp="1619011016439">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="297" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619011016439" />
+    <state width="1493" height="297" key="GridCell.Tab.0.right" timestamp="1619011016439">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="297" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619011016439" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1619003018273">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619003018273" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1619003018273">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1619003018273" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1619003018273">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1619003018273" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1619003018273">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1619003018273" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1618986499019">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618986499019" />
+    <state x="178" y="107" key="new project wizard" timestamp="1619010609019">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1619010609019" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1618476116101">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1618476116101" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1619006420885">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1619006420885" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/recommender/OfflineRecommender/src/main/scala/com/atguigu/offline/OfflineRecommender.scala</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
