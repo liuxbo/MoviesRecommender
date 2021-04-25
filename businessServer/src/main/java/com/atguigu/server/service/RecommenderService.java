@@ -12,6 +12,7 @@ import com.mongodb.client.model.Sorts;
 import org.bson.Document;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.index.query.FuzzyQueryBuilder;
 import org.elasticsearch.index.query.MoreLikeThisQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
@@ -47,17 +48,24 @@ public class RecommenderService {
      */
     public List<Recommendation> getHybridRecommendations(GetHybridRecommendationRequest request){
 
-        //获得实时推荐结果
-        //List<Recommendation> streamRecs = getSteamRecsMovies(new GetStreamRecsRequest(request.getUid(),request.getNum()));
-
-        //获得als离线推荐结果
-        //List<Recommendation> userRecs = getUserCFMovies(new GetUserCFRequest(request.getUid(),request.getNum()));
+        //获得电影相似矩阵中的结果
+        List<Recommendation> itemCF = getItemCFMovies(new GetItemCFMoviesRequest(request.getMid(),request.getNum()));
 
         //获取基于内容推荐结果
+        List<Recommendation> contentBased = getContentBasedRecommendations(new GetContentBasedRecommendationRequest(request.getMid(),request.getNum()));
 
         //返回结果
+        List<Recommendation> result = new ArrayList<>();
+        result.addAll(itemCF.subList(0,(int)Math.round(itemCF.size()*request.getCfShare())));
+        result.addAll(contentBased.subList(0,(int)Math.round(contentBased.size()*(1 - request.getCfShare()))));
+        return result;
+    }
 
-        return null;
+
+    public List<Recommendation> getItemCFMovies(GetItemCFMoviesRequest request){
+        MongoCollection<Document> itemCFCollection = getMongoDatabase().getCollection(Constant.MONGO_MOVIE_RECS_COLLECTION);
+        Document document = itemCFCollection.find(new Document("mid",request.getMid())).first();
+        return parseDocument(document,request.getNum());
     }
 
 
@@ -199,5 +207,23 @@ public class RecommenderService {
 
     }
 
+
+    /**
+     * 模糊检索主题
+     * @param request
+     * @return
+     */
+    public List<Recommendation> getFuzzyMovies(GetFuzzySearchMoviesRequest request){
+        FuzzyQueryBuilder queryBuilder = QueryBuilders.fuzzyQuery("name",request.getQuery());
+        SearchResponse searchResponse = esClient.prepareSearch(Constant.ES_INDEX).setQuery(queryBuilder).setSize(request.getNum()).execute().actionGet();
+        return parseESResponse(searchResponse);
+    }
+
+
+    public List<Recommendation> getGenresMovies(GetGenresMoviesRequest request){
+        FuzzyQueryBuilder queryBuilder = QueryBuilders.fuzzyQuery("genres",request.getGenres());
+        SearchResponse searchResponse = esClient.prepareSearch(Constant.ES_INDEX).setQuery(queryBuilder).setSize(request.getNum()).execute().actionGet();
+        return parseESResponse(searchResponse);
+    }
 
 }

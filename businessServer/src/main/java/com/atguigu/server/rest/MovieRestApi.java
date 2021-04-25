@@ -1,19 +1,19 @@
 package com.atguigu.server.rest;
 
 import com.atguigu.server.model.core.Movie;
+import com.atguigu.server.model.core.Rating;
+import com.atguigu.server.model.core.Tag;
 import com.atguigu.server.model.core.User;
 import com.atguigu.server.model.recom.Recommendation;
 import com.atguigu.server.model.request.*;
-import com.atguigu.server.service.MovieService;
-import com.atguigu.server.service.RecommenderService;
-import com.atguigu.server.service.UserService;
+import com.atguigu.server.service.*;
+import com.atguigu.server.utils.Constant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +34,17 @@ public class MovieRestApi {
 
     @Autowired
     private MovieService movieService;
+
+    @Autowired
+    private TagService tagService;
+
+    @Autowired
+    private RatingService ratingService;
+
+
+    private Logger logger = LoggerFactory.getLogger(MovieRestApi.class);
+
+
     //*******首页********************
 
     /**
@@ -70,6 +81,8 @@ public class MovieRestApi {
         return null;
     }
 
+
+
     //提供获取离线推荐信息的接口
     @RequestMapping(path = "/offline",produces = "application/json",method = RequestMethod.GET)
     @ResponseBody
@@ -91,6 +104,8 @@ public class MovieRestApi {
         return model;
     }
 
+
+
     //提供获取热门推荐信息的接口
     @RequestMapping(path = "/host",produces = "application/json",method = RequestMethod.GET)
     @ResponseBody
@@ -100,6 +115,8 @@ public class MovieRestApi {
         model.addAttribute("movies",recommenderService.getHotRecommendations(new GetHotRecommendationRequest(num)));
         return model;
     }
+
+
 
     //提供获取优质电影的信息的接口
     @RequestMapping(path = "/rate",produces = "application/json",method = RequestMethod.GET)
@@ -111,6 +128,8 @@ public class MovieRestApi {
         return  model;
     }
 
+
+
     //获取最新电影的信息的接口
     @RequestMapping(path = "/new",produces = "application/json",method = RequestMethod.GET)
     @ResponseBody
@@ -120,53 +139,96 @@ public class MovieRestApi {
         return  model;
     }
 
+
+
     //*******模糊检索********************
 
     //提供基于名称或者描述的模糊检索功能
-    public Model getFuzzySearchMovies(String query,Model model){
-
-        return null;
+    @RequestMapping(path = "/query",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public Model getFuzzySearchMovies(@RequestParam("query") String query, @RequestParam("num") int num,Model model){
+        model.addAttribute("success",true);
+        model.addAttribute("movies",recommenderService.getFuzzyMovies(new GetFuzzySearchMoviesRequest(query, num)));
+        return  model;
     }
+
+
 
     //*******电影的详细页面***********************
 
     //获取单个电影的信息
-    public Model getMovieInfo(int mid,Model model){
+    @RequestMapping(path = "/info/{mid}",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public Model getMovieInfo(@PathVariable("mid") int mid, Model model){
 
-        return null;
+        model.addAttribute("success",true);
+        model.addAttribute("movies",movieService.findMovieInfo(mid));
+        return  model;
+
     }
+
+
 
     //需要提供能够给电影打标签的功能
-    public Model addTagToMovie(int mid,String  tagname,Model model){
-
-        return null;
+    @RequestMapping(path = "/addtag/{mid}",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public void addTagToMovie(@PathVariable("mid") int mid,@RequestParam("username") String username,@RequestParam("tagname") String  tagname,Model model){
+        User user = userService.findUserByUsername(username);
+        Tag tag = new Tag(user.getUid(),mid,tagname,System.currentTimeMillis()/1000);
+        tagService.addTagToMovie(tag);
     }
+
 
     //获取某个电影的所有标签信息
-    public Model getMovieTags(int mid,Model model){
+    @RequestMapping(path = "/tags/{mid}",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public Model getMovieTags(@PathVariable("mid") int mid,Model model){
 
-        return null;
+        model.addAttribute("success",true);
+        model.addAttribute("movies",tagService.getMovieTags(mid));
+        return  model;
     }
+
+
 
     //获取电影的相似电影推荐
-    public Model getSimMoviesRecommendation(int mid,Model model){
-
-        return null;
+    @RequestMapping(path = "/same/{mid}",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public Model getSimMoviesRecommendation(@PathVariable("mid") int mid,@RequestParam("num") int num,Model model){
+        model.addAttribute("success",true);
+        model.addAttribute("movies",recommenderService.getHybridRecommendations(new GetHybridRecommendationRequest(0.5,mid,num)));
+        return  model;
     }
 
-    //提供给电影打分的功能
-    public Model rateMovie(int mid,Double score,Model model){
 
-        return  null;
+
+    //提供给电影打分的功能
+    @RequestMapping(path = "/rate/{mid}",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public void rateMovie(@RequestParam("username") String username,@PathVariable("mid") int mid,@RequestParam("score") Double score,Model model){
+        User user = userService.findUserByUsername(username);
+
+        Rating rating = new Rating(user.getUid(),mid,score,System.currentTimeMillis()/1000);
+        ratingService.rateToMovie(rating);
+
+        //输出埋点日志
+        logger.info(Constant.USER_RATING_LOG_PREFIX+rating.getUid()+"|"+rating.getMid()+"|"+rating.getScore()+"|"+rating.getTimestamp());
+
+
     }
 
     //*************电影的类别页面******************
 
     //需要能够提供影片类别的查找
-    public Model getGenresMovies(String genres,Model model){
+    @RequestMapping(path = "/genres",produces = "application/json",method = RequestMethod.GET)
+    @ResponseBody
+    public Model getGenresMovies(@RequestParam("genres") String genres,@RequestParam("num") int num,Model model){
 
-        return null;
+        model.addAttribute("success",true);
+        model.addAttribute("movies",recommenderService.getGenresMovies(new GetGenresMoviesRequest(genres,num)));
+        return  model;
     }
+
 
     //*************用户空间页面*********************
 
@@ -175,6 +237,7 @@ public class MovieRestApi {
 
         return null;
     }
+
 
     //需要获取图表数据
     public Model getUserChart(String username,Model model){

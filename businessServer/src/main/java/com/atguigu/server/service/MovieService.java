@@ -27,6 +27,7 @@ public class MovieService {
     private ObjectMapper objectMapper;
 
     private MongoCollection<Document> movieCollection;
+
     private MongoCollection<Document> getMovieCollection(){
         if(null == movieCollection)
             this.movieCollection = mongoClient.getDatabase(Constant.MONGO_DATABASE).getCollection(Constant.MONGO_MOVIE_COLLECTION);
@@ -68,5 +69,16 @@ public class MovieService {
        }
        return result;
     }
+
+
+    public Movie findMovieInfo(int mid){
+       Document movieDocument = getMovieCollection().find(new Document("mid",mid)).first();
+
+       if(movieDocument == null || movieDocument.isEmpty())
+           return null;
+       return documentToMovie(movieDocument);
+    }
+
+
 
 }
