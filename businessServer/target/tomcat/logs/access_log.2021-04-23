@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:47:03 +0800] "GET /rest/users/register?username=5555@qq.com&password=5555 HTTP/1.1" 404 - http-bio-8088-exec-2 0
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:48:03 +0800] "GET / HTTP/1.1" 404 - http-bio-8088-exec-5 0
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:48:06 +0800] "GET / HTTP/1.1" 404 - http-bio-8088-exec-6 0
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:49:54 +0800] "GET / HTTP/1.1" 200 96 http-bio-8088-exec-2 105
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:49:54 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8088-exec-3 26
+0:0:0:0:0:0:0:1 - - [23/Apr/2021:10:50:10 +0800] "GET /rest/users/register?username=5555@qq.com&password=5555 HTTP/1.1" 200 27 http-bio-8088-exec-6 252

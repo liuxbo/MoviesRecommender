@@ -1,3 +1,7 @@
+com\atguigu\server\utils\Configure.class
+com\atguigu\server\utils\Constant.class
+com\atguigu\server\rest\MovieRestApi.class
+com\atguigu\server\model\request\RegisterUserRequest.class
 com\atguigu\server\rest\UserRestApi.class
 com\atguigu\server\model\core\User.class
-com\atguigu\server\rest\MovieRestApi.class
+com\atguigu\server\service\UserService.class
