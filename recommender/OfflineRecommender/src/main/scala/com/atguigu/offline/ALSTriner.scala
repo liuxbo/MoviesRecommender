@@ -1,10 +1,12 @@
 package com.atguigu.offline
 
 import breeze.numerics.sqrt
+import com.atguigu.scala.model.{MongoConfig, MovieRating}
 import org.apache.spark.SparkConf
 import org.apache.spark.mllib.recommendation.{ALS, MatrixFactorizationModel, Rating}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
+import com.atguigu.java.model.Constant._
 
 object ALSTriner {
   def main(args: Array[String]): Unit = {
@@ -22,8 +24,8 @@ object ALSTriner {
     //加载评分数据
     val ratingRDD = spark.read
       .option("uri",mongoConfig.uri)
-      .option("collection",OfflineRecommender.MONGODB_RATING_COLLECTION)
-      .format("com.mongodb.spark.sql")
+      .option("collection",MONGO_RATING_COLLECTION)
+      .format(MONGO_DRIVER_CLASS)
       .load()
       .as[MovieRating]
       .rdd

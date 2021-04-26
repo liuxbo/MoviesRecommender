@@ -5,23 +5,15 @@ import org.apache.spark.SparkConf
 import org.apache.spark.mllib.recommendation.{ALS, Rating}
 import org.apache.spark.sql.SparkSession
 import org.jblas.DoubleMatrix
-case class Movie(val mid: Int,val name: String,val descri: String,val timelong: String,val issue: String,
-                 val  shoot: String,val language: String,val genres: String,val actors: String,val directors: String)
-case class  MovieRating(val uid:Int,val mid:Int,val score:Double,val timestamp:Int)
-case class MongoConfig(val uri:String,val db:String)
+import com.atguigu.java.model.Constant._
+import com.atguigu.scala.model.{MongoConfig, Movie, MovieRating, MovieRecs, Recommendation, UserRecs}
 
-case class Recommendation(rid:Int, r:Double)
-// 用户的推荐
-case class UserRecs(uid:Int, recs:Seq[Recommendation])
-//电影的相似度
-case class MovieRecs(mid:Int, recs:Seq[Recommendation])
+
+
 object OfflineRecommender {
 
-  val MONGODB_RATING_COLLECTION = "Rating"
-  val MONGODB_MOVIE_COLLECTION = "Movie"
   val USER_MAX_RECOMMENDATION = 20
-  val USER_RECS="UserRecs"
-  val MOVIE_RECS="MovieRecs"
+
   def main(args: Array[String]): Unit = {
     val config = Map(
       "spark.cores" -> "local[*]",
@@ -43,8 +35,8 @@ object OfflineRecommender {
     //读取mongodb中的业务数据
     val ratingRDD = spark.read
       .option("uri",mongoConfig.uri)
-      .option("collection",MONGODB_RATING_COLLECTION)
-      .format("com.mongodb.spark.sql")
+      .option("collection",MONGO_RATING_COLLECTION)
+      .format(MONGO_DRIVER_CLASS)
       .load()
       .as[MovieRating]
       .rdd
@@ -56,8 +48,8 @@ object OfflineRecommender {
     //电影数据集 RDD[Int]
     val movieRDD = spark.read
       .option("uri",mongoConfig.uri)
-      .option("collection",MONGODB_MOVIE_COLLECTION)
-      .format("com.mongodb.spark.sql")
+      .option("collection",MONGO_MOVIE_COLLECTION)
+      .format(MONGO_DRIVER_CLASS)
       .load()
       .as[Movie]
       .rdd
@@ -71,7 +63,7 @@ object OfflineRecommender {
 
     //计算用户推荐矩阵
       //需要构造一个usersProducts RDD[(Int,Int)]
-   /* val userMovies = userRDD.cartesian(movieRDD)
+   val userMovies = userRDD.cartesian(movieRDD)
     val preRatings = model.predict(userMovies)
 
     val userRecs = preRatings
@@ -84,10 +76,10 @@ object OfflineRecommender {
 
     userRecs.write
         .option("uri",mongoConfig.uri)
-        .option("collection",USER_RECS)
+        .option("collection",MONGO_USER_RECS_COLLECTION)
         .mode("overwrite")
-        .format("com.mongodb.spark.sql")
-        .save()*/
+        .format(MONGO_DRIVER_CLASS)
+        .save()
 
     //计算电影相似度矩阵
      //获取电影的特征矩阵
@@ -106,9 +98,9 @@ object OfflineRecommender {
         }.toDF()
     movieRecs.write
         .option("uri",mongoConfig.uri)
-        .option("collection",MOVIE_RECS)
+        .option("collection",MONGO_MOVIE_RECS_COLLECTION)
         .mode("overwrite")
-        .format("com.mongodb.spark.sql")
+        .format(MONGO_DRIVER_CLASS)
         .save()
 
    spark.close()

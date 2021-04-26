@@ -15,6 +15,7 @@
         <module>recommender/kafkaStream</module>
         <module>businessServer</module>
         <module>website</module>
+        <module>coremodel</module>
     </modules>
     <packaging>pom</packaging>
 

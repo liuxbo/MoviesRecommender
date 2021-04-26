@@ -9,6 +9,7 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, Loca
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import redis.clients.jedis.Jedis
 import scala.collection.JavaConversions._
+import com.atguigu.java.model.Constant._
 
 object ConnHelper extends Serializable{
   lazy val jedis = new Jedis("linux")
@@ -24,9 +25,7 @@ case class MovieRecs(mid:Int, recs:Seq[Recommendation])
 object StreamingRecommender {
   val MAX_SIM_MOVIES_NUM = 20
   val MAX_USER_RATINGS_NUM = 20
-  val MONGODB_STREAM_RECS_COLLECTION = "StreamRecs"
-  val MONGODB_RATING_COLLECTION = "Rating"
-  val MONGODB_MOVIE_RECS_COLLECTION = "MovieRecs"
+
 
   def main(args: Array[String]): Unit = {
     val config=Map(
@@ -46,8 +45,8 @@ object StreamingRecommender {
      //转换成Map[Int , Map[Int,Double]]
     val simMoviesMatrix = spark.read
       .option("uri",config("mongo.uri"))
-      .option("collection",MONGODB_MOVIE_RECS_COLLECTION)
-      .format("com.mongodb.spark.sql")
+      .option("collection",MONGO_MOVIE_RECS_COLLECTION)
+      .format(MONGO_DRIVER_CLASS)
       .load()
       .as[MovieRecs]
       .rdd
@@ -112,7 +111,7 @@ object StreamingRecommender {
    */
   def saveRecsToMongoDB(uid:Int,streamRecs:Array[(Int,Double)])(implicit mongoConfig: MongoConfig): Unit ={
     //到StreamRecs的连接
-    val streamRecsCollection = ConnHelper.mongoClient(mongoConfig.db)(MONGODB_STREAM_RECS_COLLECTION)
+    val streamRecsCollection = ConnHelper.mongoClient(mongoConfig.db)(MONGO_STREAM_RECS_COLLECTION)
     streamRecsCollection.findAndRemove(MongoDBObject("uid" -> uid))
     streamRecsCollection.insert(MongoDBObject("uid" -> uid,"recs" -> streamRecs.map(x=> x._1+":"+x._2).mkString("|")))
 
@@ -189,7 +188,7 @@ object StreamingRecommender {
     val allSimMovies = simMovies.get(mid).get.toArray
 
     // 获取用户已经观看过的电影
-    val ratingExist = ConnHelper.mongoClient(mongoConfig.db)(MONGODB_RATING_COLLECTION).find(MongoDBObject("uid" -> uid)).toArray.map{item =>
+    val ratingExist = ConnHelper.mongoClient(mongoConfig.db)(MONGO_RATING_COLLECTION).find(MongoDBObject("uid" -> uid)).toArray.map{item =>
       item.get("mid").toString.toInt
     }
 

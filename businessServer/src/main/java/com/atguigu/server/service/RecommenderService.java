@@ -1,9 +1,9 @@
 package com.atguigu.server.service;
 
 
+import com.atguigu.java.model.Constant;
 import com.atguigu.server.model.recom.Recommendation;
 import com.atguigu.server.model.request.*;
-import com.atguigu.server.utils.Constant;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;

@@ -2,11 +2,11 @@ package com.atguigu.server.service;
 
 //具体处理业务服务的服务类
 
+import com.atguigu.java.model.Constant;
 import com.atguigu.server.model.core.User;
 import com.atguigu.server.model.request.LoginUserRequest;
 import com.atguigu.server.model.request.RegisterUserRequest;
 import com.atguigu.server.model.request.UpdateUserGenresRequest;
-import com.atguigu.server.utils.Constant;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.MongoClient;

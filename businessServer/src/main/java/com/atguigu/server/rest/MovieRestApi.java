@@ -1,5 +1,6 @@
 package com.atguigu.server.rest;
 
+import com.atguigu.java.model.Constant;
 import com.atguigu.server.model.core.Movie;
 import com.atguigu.server.model.core.Rating;
 import com.atguigu.server.model.core.Tag;
@@ -7,7 +8,6 @@ import com.atguigu.server.model.core.User;
 import com.atguigu.server.model.recom.Recommendation;
 import com.atguigu.server.model.request.*;
 import com.atguigu.server.service.*;
-import com.atguigu.server.utils.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

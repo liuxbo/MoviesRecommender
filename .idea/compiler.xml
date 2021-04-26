@@ -13,6 +13,7 @@
         <module name="kafkaStream" />
         <module name="statisticsRecommender" />
         <module name="website" />
+        <module name="coremodel" />
       </profile>
     </annotationProcessing>
   </component>

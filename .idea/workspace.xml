@@ -26,6 +26,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MovieRecommendSystem" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -255,6 +258,12 @@
       <workItem from="1619328979714" duration="2813000" />
       <workItem from="1619332760366" duration="1270000" />
       <workItem from="1619334070580" duration="135000" />
+      <workItem from="1619336442200" duration="2266000" />
+      <workItem from="1619341396407" duration="151000" />
+      <workItem from="1619341568870" duration="1513000" />
+      <workItem from="1619354174297" duration="4682000" />
+      <workItem from="1619400111154" duration="4944000" />
+      <workItem from="1619421185374" duration="3586000" />
     </task>
     <servers />
   </component>
@@ -262,18 +271,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Project_Structure" timestamp="1618983151500">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1619402751542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1618983151500" />
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1619402751542" />
     <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1618023821476">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1618023821476" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1619334016158">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1619358887433">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1619334016158" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1619358887433" />
     <state x="463" y="271" width="609" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1617850449162">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -318,10 +327,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618986499019" />
-    <state x="178" y="107" key="new project wizard" timestamp="1619097765902">
+    <state x="178" y="107" key="new project wizard" timestamp="1619402636374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1619097765902" />
+    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1619402636374" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1619321198152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -330,16 +339,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1619164892916" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/recommender/OfflineRecommender/src/main/scala/com/atguigu/offline/OfflineRecommender.scala</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -25,6 +25,13 @@
 
     <dependencies>
 
+        <!-- 加入核心模型-->
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>coremodel</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- spring-->
         <dependency>
             <groupId>org.springframework</groupId>

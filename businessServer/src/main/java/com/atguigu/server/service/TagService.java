@@ -1,7 +1,7 @@
 package com.atguigu.server.service;
 
+import com.atguigu.java.model.Constant;
 import com.atguigu.server.model.core.Tag;
-import com.atguigu.server.utils.Constant;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.MongoClient;
